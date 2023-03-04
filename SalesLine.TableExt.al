@@ -1,10 +1,5 @@
 tableextension 50100 ADWSalesLine extends "Sales Line"
 {
-    fields
-    {
-        // Add changes to table fields here
-    }
-
     trigger OnAfterInsert()
     begin
         if (("No." = '') or ("Line Amount" = 0)) and (Type.AsInteger() <> 0)
@@ -17,7 +12,4 @@ tableextension 50100 ADWSalesLine extends "Sales Line"
         end;
 
     end;
-
-    var
-        myInt: Integer;
 }
